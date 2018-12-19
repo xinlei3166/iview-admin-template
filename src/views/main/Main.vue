@@ -122,24 +122,36 @@
 </script>
 
 <style lang="stylus" scoped>
-    head-nav-color = #242F42
+    bg-color = #001529
+    menu-bg-color = #000c17
 
     .layout
         background: #f5f7f9;
         position: relative;
-        /*border-radius: 4px;*/
         overflow: hidden;
         height 100%
 
         .layout-sider
             height 100%
+            background bg-color
+
+            .ivu-menu-dark, .ivu-menu-vertical
+                background bg-color
+
+            .ivu-menu-opened
+                >>> .ivu-menu-submenu-title
+                    background bg-color!important
+                    color #fff
+
+                >>> .ivu-menu
+                    background menu-bg-color
 
     .layout-logo
         width 100%
         height: 64px
         color: white
         /*border-radius: 3px*/
-        background head-nav-color
+        background bg-color
         display flex
         align-items center
         justify-content center
@@ -168,7 +180,7 @@
             color: #fff
 
     .menu-icon
-        transition: all .3s
+        /*transition: all .3s*/
 
     .rotate-icon
         transform: rotate(-90deg)
@@ -181,28 +193,28 @@
             text-overflow: ellipsis
             white-space: nowrap
             vertical-align: bottom
-            transition: width .2s ease .2s
+            /*transition: width .2s ease .2s*/
 
         i
-            transform: translateX(0px)
-            transition: font-size .2s ease, transform .2s ease
+            // transform: translateX(0px)
+            // transition: font-size .2s ease, transform .2s ease
             vertical-align: middle
             font-size: 16px
 
     .collapsed-menu
         span
             width: 0
-            transition: width .2s ease
+            // transition: width .2s ease
 
         i
-            transform: translateX(5px);
-            transition: font-size .2s ease .2s, transform .2s ease .2s;
-            vertical-align: middle;
-            font-size: 21px;
+            // transform: translateX(5px)
+            // transition: font-size .2s ease .2s, transform .2s ease .2s
+            vertical-align: middle
+            font-size: 21px
 
     .layout-header
-        background head-nav-color;
-        box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+        background bg-color
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .1)
 
     .layout-content
         height calc(100% - 60px)
